@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 16:27:30 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/09 17:10:51 by skaynar          ###   ########.fr       */
+/*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
+/*   Updated: 2025/01/10 18:59:41 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,67 @@ void ft_error()
     write(1, "Error\n", 6);
     exit (0);
 }
-int negative(char *av)
-{
+void samectl(int *iarr)
+{   
+    int j;
+    j = 1;
+    int i;
+    i = 0;
+    while(iarr[i])
+    {
+        while(iarr[j])
+        {
+            if(iarr[i] == iarr[j])
+                ft_error();  
+            else
+                j++;          
+        }
+        i++;
+        j = i;
+        // 42 "45 4" 5 verince hata alıyo
+    }
     
 }
-int control(char *av)
-{   
-    int ctlatoi;
-    int i;
+void numctl(char *str)
+{
     int j;
+    j = 0;
+    while(str[j])
+    {
+        if(str[j] == '-')
+            j++;
+        while(!ft_isdigit(str[j]))
+           ft_error();
+        j++;
+    }
+}
+void stoa (t_stack **change)
+{
+    int array[ft_lstsize(*change)];
+    int i;
+    i = 0;
+    t_stack *strt;
+    strt = *change;
+    while(strt)
+    {
+        array[i] = strt->content;
+        strt = strt->next;
+        i++;
+    }
+    samectl(array);
+}
+
+int control(char *av, t_stack **a)
+{   
+    int i;
     i = 0;
     char **repo;
-    if(av)
     repo = ft_split(av, ' ');
     while(repo[i])
     {
-        j = 0;
-        while (repo[i][j])
-        {
-            if (!ft_isdigit(repo[i][j]))
-                {
-                    ft_error();
-                    return (0);
-                }
-            j++;
-        }
-        ctlatoi =(ft_atoi(repo[i]));
+        numctl(repo[i]);
+        ft_atoi(repo[i]);
+        ft_lstadd_back(a,ft_lstnew(ft_atoi(repo[i])));
         i++;
     }
 return (0);    

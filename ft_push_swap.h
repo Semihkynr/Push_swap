@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/09 14:34:05 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/10 18:27:57 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_stack;
 
-int control(char *av);
+int control(char *av, t_stack **a);
+void numctl(char *str);
+void ft_error();
+void stoa (t_stack **change);
+
+
+
 
 t_stack	*ft_lstnew(int content);
 t_stack	*ft_lstlast(t_stack *lst);
