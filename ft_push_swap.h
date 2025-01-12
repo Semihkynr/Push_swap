@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/10 18:27:57 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/12 15:24:55 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int control(char *av, t_stack **a);
 void numctl(char *str);
 void ft_error();
 void stoa (t_stack **change);
+void print(int *ctl,int size);
+void samectl(int *iarr, int size);
+void intctl(long arr);
 
 
 

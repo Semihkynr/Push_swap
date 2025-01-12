@@ -6,31 +6,31 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:38:58 by skaynar           #+#    #+#             */
-/*   Updated: 2024/10/26 11:51:07 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/12 15:27:18 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	isaret;
-	int	basamak;
+	int	sign;
+	long	value;
 	int	i;
 
-	isaret = 1;
-	basamak = 0;
+	sign = 1;
+	value = 0;
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			isaret *= -1;
+			sign *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		basamak = basamak * 10 + (str[i] - '0');
+		value = value * 10 + (str[i] - '0');
 		i++;
 	}
-	return (isaret * basamak);
+	return (sign * value);
 }

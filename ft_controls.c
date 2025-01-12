@@ -6,26 +6,26 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/10 18:59:41 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/12 15:30:41 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void ft_error()
+void intctl(long arr)
 {
-    write(1, "Error\n", 6);
-    exit (0);
+    if(arr > 2147483647 || arr < -2147483648)
+        ft_error();
 }
-void samectl(int *iarr)
+void samectl(int *iarr, int size)
 {   
     int j;
     j = 1;
     int i;
     i = 0;
-    while(iarr[i])
+    while(i < size)
     {
-        while(iarr[j])
+        while(j < size)
         {
             if(iarr[i] == iarr[j])
                 ft_error();  
@@ -33,10 +33,8 @@ void samectl(int *iarr)
                 j++;          
         }
         i++;
-        j = i;
-        // 42 "45 4" 5 verince hata alıyo
+        j = i + 1;
     }
-    
 }
 void numctl(char *str)
 {
@@ -64,7 +62,7 @@ void stoa (t_stack **change)
         strt = strt->next;
         i++;
     }
-    samectl(array);
+    samectl(array,ft_lstsize(*change));
 }
 
 int control(char *av, t_stack **a)
@@ -73,12 +71,18 @@ int control(char *av, t_stack **a)
     i = 0;
     char **repo;
     repo = ft_split(av, ' ');
+    if (!repo || !repo[0])
+    {
+        free(repo);
+        return(0);
+    }
     while(repo[i])
     {
         numctl(repo[i]);
-        ft_atoi(repo[i]);
+        intctl(ft_atoi(repo[i]));
         ft_lstadd_back(a,ft_lstnew(ft_atoi(repo[i])));
         i++;
     }
+    free(repo);
 return (0);    
 }

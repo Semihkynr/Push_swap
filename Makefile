@@ -1,7 +1,7 @@
 
 NAME = push_swap
 
-SRCS =	ft_controls.c main.c \
+SRCS =	ft_controls.c main.c controls1.c \
 		utils/listfnc.c \
 		ops/op0.c \
 		ops/op1.c \

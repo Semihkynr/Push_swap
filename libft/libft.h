@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:15:52 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/09 13:36:13 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/12 15:16:55 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int					ft_atoi(const char *str);
+long				ft_atoi(const char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int a);
 int					ft_isascii(int a);
