@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/16 13:12:22 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/17 11:08:57 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,19 @@ void numctl(char *str)
 {
     int j;
     j = 0;
+    int a;
+    a = 0;
     while(str[j])
     {
-        if(str[j] == '-')
+        if(str[j] == '-' || str[j] == '+')
+        { 
             j++;
+            a++; 
+        }
         while(!ft_isdigit(str[j]))
            ft_error();
+        if (a == 2)
+            ft_error();
         j++;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/12 15:24:55 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/17 10:52:49 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 typedef struct s_list
 {   
-    int             index;
     int			    content;
 	struct s_list	*next;
 }					t_stack;
