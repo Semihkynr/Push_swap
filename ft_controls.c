@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/17 11:08:57 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/18 10:51:01 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void stoa (t_stack **change)
         i++;
     }
     samectl(array,ft_lstsize(*change));
+    linectl(array,ft_lstsize(*change));
 }
 
 int control(char *av, t_stack **a)
