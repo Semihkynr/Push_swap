@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/18 10:51:01 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/21 12:25:44 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,13 @@ void stoa (t_stack **change)
     i = 0;
     t_stack *strt;
     strt = *change;
-    while(strt)
+    while(strt->next != *change)
     {
         array[i] = strt->content;
         strt = strt->next;
         i++;
     }
+    array[i] = strt->content;
     samectl(array,ft_lstsize(*change));
     linectl(array,ft_lstsize(*change));
 }
@@ -91,6 +92,7 @@ int control(char *av, t_stack **a)
         ft_lstadd_back(a,ft_lstnew(ft_atoi(repo[i])));
         i++;
     }
+    
     free(repo);
 return (0);    
 }

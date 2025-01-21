@@ -7,10 +7,8 @@ SRCS =	ft_controls.c main.c controls1.c \
 		ops/op1.c \
 		ops/op2.c \
 		ops/op3.c \
-		utils/two.c \
-		# utilss/thrctl.c \
-		# utilss/fourctl.c \
-
+		utils/minisort.c \
+		utils/ft_sort.c \
 
 OBJS = $(SRCS:.c=.o)
 

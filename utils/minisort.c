@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   two.c                                              :+:      :+:    :+:   */
+/*   minisort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:03:04 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/18 16:28:33 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/21 13:46:36 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,27 @@ void thrctl(t_stack **a)
 {
     if((*a)-> content > (*a) -> next -> content )
         {
+            printf("%d\n",(*a)->content);
+            printf("%d\n",(*a)->next->content);
+            printf("%d\n",(*a)->next->next->content);
             sa(a);
+            printf("%d\n",(*a)->content);
+            printf("%d\n",(*a)->next->content);
+            printf("%d\n",(*a)->next->next->content);
             if((*a) -> next -> content > (*a) -> next -> next -> content )
                 rra(a);
             if((*a) -> content  > (*a) -> next -> content)
                 sa(a);
         }
-    else // burda hata var normal sıralıyı da else yeriine sokup işlem yapıyo buda 4 lü sıralarken sıkıntı çıkarıyo 3 2 4 6 girip test et
+    if ((*a) -> next -> content > (*a) -> next -> next -> content)
         {
             rra(a);
             if ((*a) -> content > (*a) -> next -> content)
                 sa(a);
         }
+    printf("--%d\n",(*a)->content);
+    printf("--%d\n",(*a)->next->content);
+    printf("--%d\n",(*a)->next->next->content);
 }
 void fourctl (t_stack **h,t_stack **s)
 {
@@ -51,11 +60,8 @@ void fourctl (t_stack **h,t_stack **s)
         }
     if ((*h) -> content > (*h) -> next -> content)
         sa(h);
-    printf("%d\n",(*h) ->content);
-    printf("%d\n",(*h) -> next ->content);
-    printf("%d\n",(*h) -> next -> next ->content);
-    printf("%d\n",(*h) -> next -> next -> next ->content);
 }
+
 void acnumctl(int ac, t_stack **htc, t_stack **smh)
 {
     if(ac == 3)
@@ -64,16 +70,6 @@ void acnumctl(int ac, t_stack **htc, t_stack **smh)
         thrctl(htc);
     if(ac == 5)
         fourctl(htc,smh);
+    // if(ac > 5)
+    //     sortalg();
 }
-// a b c d
-// 3 2 4 6 -- 2 3 4 6
-// 5 2 4 6 -- 6 5 2 4 -- 5 2 4 -- 2 4 5 -- 6 2 4 5 -- 2 4 5 6
-// 7 2 4 6 -- 2 4 6 7
-
-
-// p -> content = a
-// p -> next -> content = b
-// p -> next -> next -> content = c
-// p -> next -> next -> next ->content = d
-
-// ra yukardan aşağı rra aşağıdan yukarı

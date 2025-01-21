@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/09 14:27:02 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/21 13:45:13 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,32 @@ t_stack	*ft_lstnew(int content)
 	if (!node)
 		return (0);
 	node->content = content;
-	node->next = NULL;
+	node->next = node;
 	return (node);
 }
 t_stack	*ft_lstlast(t_stack *lst)
 {
-	if (!lst)
+	t_stack *tmp;
+	tmp = lst;
+	if (!tmp)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (tmp->next != lst)
+		tmp = tmp->next;
+	return (tmp);
 }
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*end;
 
 	if (!*lst)
+	{
 		*lst = new;
+		new->next = *lst; 
+	}
 	else
 	{
 		end = ft_lstlast(*lst);
+		new->next = *lst;
 		end->next = new;
 	}
 }
@@ -47,13 +53,31 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 int	ft_lstsize(t_stack *lst)
 {
-	size_t	i;
+	int		i;
+	t_stack	*start;
 
-	i = 0;
-	while (lst)
+	if (!lst)
+		return (0);
+	start = lst;
+	i = 1;
+	while (start->next != lst)
 	{
 		i++;
-		lst = lst->next;
+		start = start->next;
 	}
 	return (i);
+}
+void	ft_lstclear(t_stack **lst)
+{
+	t_stack	*temp;
+
+	if (lst == NULL || *lst == NULL)
+		return ;
+	while (*lst)
+	{
+		temp = *lst;
+		*lst = temp->next;
+		free(temp);
+	}
+	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:10:49 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/09 14:30:03 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/21 12:54:28 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	rrotate(t_stack **node)
 		second_end = *node;
 		while (second_end->next != end)
 			second_end = second_end->next;
-		second_end->next = NULL;
+		second_end->next = end;
 		end->next = *node;
 		*node = end;
 	}
