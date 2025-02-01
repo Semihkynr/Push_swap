@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:07:01 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/01 10:41:04 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/01 12:04:24 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*add;
 	t_stack	*last;
-
 	add = *b;
 	if ((*b)->next == *b)
 		*b = NULL;
@@ -47,7 +46,6 @@ void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*add;
 	t_stack	*last;
-
 	add = *a;
 	if ((*a)->next == *a)
 		*a = NULL;

@@ -40,6 +40,6 @@ fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
 
-re: fclean all clean
+re: fclean all
 
 .PHONY: all clean fclean re
