@@ -6,48 +6,70 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:07:01 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/21 13:26:02 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/01 10:41:04 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_push_swap.h"
 
-void    pa(t_stack **node_a, t_stack **node_b)
+void	pa(t_stack **a, t_stack **b)
 {
-    t_stack *add;
+	t_stack	*add;
+	t_stack	*last;
 
-    if (*node_b != NULL)
-    {
-        add = *node_b;
-        *node_b = (*node_b)->next;
-        add->next = *node_a;
-        *node_a = add;
-
-        t_stack *last_a = *node_a;
-        while (last_a->next != NULL)
-            last_a = last_a->next;
-        last_a->next = *node_a;
-
-        write(1, "pa\n", 3);
-    }
+	add = *b;
+	if ((*b)->next == *b)
+		*b = NULL;
+	else
+	{
+		last = *b;
+		while (last->next != *b)
+			last = last->next;
+		*b = (*b)->next;
+		last->next = *b;
+	}
+	add->next = *a;
+	if (*a)
+	{
+		last = *a;
+		while (last->next != *a)
+			last = last->next;
+		last->next = add;
+	}
+	else
+		add->next = add;
+	*a = add;
+	write(1, "pa\n", 3);
 }
 
-void    pb(t_stack **node_a, t_stack **node_b)
+
+void	pb(t_stack **a, t_stack **b)
 {
-    t_stack *add;
+	t_stack	*add;
+	t_stack	*last;
 
-    if (*node_a != NULL)
-    {
-        add = *node_a;
-        *node_a = (*node_a)->next;
-        add->next = *node_b;
-        *node_b = add;
-
-        t_stack *last_b = *node_b;
-        while (last_b->next != NULL)
-            last_b = last_b->next;
-        last_b->next = *node_b;
-
-        write(1, "pb\n", 3);
-    }
+	add = *a;
+	if ((*a)->next == *a)
+		*a = NULL;
+	else
+	{
+		last = *a;
+		while (last->next != *a)
+			last = last->next;
+		*a = (*a)->next;
+		last->next = *a;
+	}
+	add->next = *b;
+	if (*b)
+	{
+		last = *b;
+		while (last->next != *b)
+			last = last->next;
+		last->next = add;
+	}
+	else
+		add->next = add;
+	*b = add;
+	write(1, "pb\n", 3);
 }
+

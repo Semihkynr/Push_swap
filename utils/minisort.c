@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:03:04 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/21 13:46:36 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/01 10:58:50 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ void thrctl(t_stack **a)
 {
     if((*a)-> content > (*a) -> next -> content )
         {
-            printf("%d\n",(*a)->content);
-            printf("%d\n",(*a)->next->content);
-            printf("%d\n",(*a)->next->next->content);
-            sa(a);
-            printf("%d\n",(*a)->content);
-            printf("%d\n",(*a)->next->content);
-            printf("%d\n",(*a)->next->next->content);
             if((*a) -> next -> content > (*a) -> next -> next -> content )
                 rra(a);
             if((*a) -> content  > (*a) -> next -> content)
@@ -39,9 +32,6 @@ void thrctl(t_stack **a)
             if ((*a) -> content > (*a) -> next -> content)
                 sa(a);
         }
-    printf("--%d\n",(*a)->content);
-    printf("--%d\n",(*a)->next->content);
-    printf("--%d\n",(*a)->next->next->content);
 }
 void fourctl (t_stack **h,t_stack **s)
 {
@@ -60,6 +50,8 @@ void fourctl (t_stack **h,t_stack **s)
         }
     if ((*h) -> content > (*h) -> next -> content)
         sa(h);
+    (*h)->next->next->next->next = *h;
+    return ;
 }
 
 void acnumctl(int ac, t_stack **htc, t_stack **smh)
@@ -70,6 +62,6 @@ void acnumctl(int ac, t_stack **htc, t_stack **smh)
         thrctl(htc);
     if(ac == 5)
         fourctl(htc,smh);
-    // if(ac > 5)
-    //     sortalg();
+    if(ac > 5)
+        sortalg();
 }
