@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/21 13:45:13 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 14:01:00 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,26 @@ t_stack	*ft_lstnew(int content)
 	if (!node)
 		return (0);
 	node->content = content;
-	node->next = node;
+	node->next = NULL;
 	return (node);
 }
 t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack *tmp;
-	tmp = lst;
-	if (!tmp)
+	if (!lst)
 		return (NULL);
-	while (tmp->next != lst)
-		tmp = tmp->next;
-	return (tmp);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*end;
 
 	if (!*lst)
-	{
 		*lst = new;
-		new->next = *lst; 
-	}
 	else
 	{
 		end = ft_lstlast(*lst);
-		new->next = *lst;
 		end->next = new;
 	}
 }
@@ -53,17 +47,13 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 int	ft_lstsize(t_stack *lst)
 {
-	int		i;
-	t_stack	*start;
+	size_t	i;
 
-	if (!lst)
-		return (0);
-	start = lst;
-	i = 1;
-	while (start->next != lst)
+	i = 0;
+	while (lst)
 	{
 		i++;
-		start = start->next;
+		lst = lst->next;
 	}
 	return (i);
 }

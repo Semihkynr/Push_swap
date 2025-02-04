@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/21 12:01:32 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:11:50 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int control(char *av, t_stack **a);
 void linectl(int *line, int size);
 void numctl(char *str);
 void ft_error();
+void ft_errornw(char *av,t_stack **x);
 void stoa (t_stack **change);
 void samectl(int *iarr, int size);
 void intctl(long arr);
@@ -36,16 +37,14 @@ void twoctl (t_stack **a);
 void thrctl(t_stack **a);
 void fourctl (t_stack **h,t_stack **s);
 void acnumctl(int ac, t_stack **htc, t_stack **smh);
-void sortalg();
 
 
 
 t_stack	*ft_lstnew(int content);
 t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstclear(t_stack **lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 int	ft_lstsize(t_stack *lst);
-void	ft_lstclear(t_stack **lst);
-
 
 void				sa(t_stack **node_a);
 void				sb(t_stack **node_b);

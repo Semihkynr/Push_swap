@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/01 11:56:21 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:19:31 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void numctl(char *str)
             a++; 
         }
         while(!ft_isdigit(str[j]))
-           ft_error();
+            ft_error();
         if (a == 2)
             ft_error();
         j++;
@@ -63,13 +63,12 @@ void stoa (t_stack **change)
     i = 0;
     t_stack *strt;
     strt = *change;
-    while(strt->next != *change)
+    while(strt)
     {
         array[i] = strt->content;
         strt = strt->next;
         i++;
     }
-    array[i] = strt->content;
     samectl(array,ft_lstsize(*change));
     linectl(array,ft_lstsize(*change));
 }
@@ -92,7 +91,6 @@ int control(char *av, t_stack **a)
         ft_lstadd_back(a,ft_lstnew(ft_atoi(repo[i])));
         i++;
     }
-    
     free(repo);
 return (0);    
 }

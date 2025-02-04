@@ -6,14 +6,16 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/21 12:26:08 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:18:41 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void ft_error()
-{
+void ft_error(char *av,t_stack **x)
+{   
+    free(av);
+    ft_lstclear(x);
     write(1, "Error\n", 6);
     exit (0);
 }

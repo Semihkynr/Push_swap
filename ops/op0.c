@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:38:39 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/01 10:57:45 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/01/09 14:31:22 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void     swap(t_stack **node)
 {
     int temp;
+    
     if(ft_lstsize(*node) > 1)
     {
         temp = (*node)->next->content;

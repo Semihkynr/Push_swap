@@ -8,7 +8,9 @@ SRCS =	ft_controls.c main.c controls1.c \
 		ops/op2.c \
 		ops/op3.c \
 		utils/minisort.c \
-		utils/ft_sort.c \
+		# utilss/thrctl.c \
+		# utilss/fourctl.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
@@ -40,6 +42,6 @@ fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
 
-re: fclean all
+re: fclean all clean
 
 .PHONY: all clean fclean re

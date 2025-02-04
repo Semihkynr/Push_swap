@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:03:04 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/01 11:45:53 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 14:24:01 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void acnumctl(int ac, t_stack **htc, t_stack **smh)
     if(ac == 5)
         fourctl(htc,smh);
     if(ac > 5)
-        sortalg();
+        write(1, "semih",5);
 }
