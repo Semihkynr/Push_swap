@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/04 14:01:00 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 18:47:32 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,12 @@ void	ft_lstclear(t_stack **lst)
 
 	if (lst == NULL || *lst == NULL)
 		return ;
+	temp = *lst;
 	while (*lst)
 	{
-		temp = *lst;
 		*lst = temp->next;
 		free(temp);
+		temp = *lst;
 	}
-	*lst = NULL;
+	free(lst);
 }

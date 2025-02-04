@@ -6,18 +6,19 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/04 15:19:31 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 19:10:59 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void intctl(long arr)
+int intctl(long arr)
 {
     if(arr > 2147483647 || arr < -2147483648)
-        ft_error();
+        return (0);
+    return (1);
 }
-void samectl(int *iarr, int size)
+int samectl(int *iarr, int size)
 {   
     int j;
     j = 1;
@@ -28,15 +29,16 @@ void samectl(int *iarr, int size)
         while(j < size)
         {
             if(iarr[i] == iarr[j])
-                ft_error();  
+                return (0); 
             else
                 j++;          
         }
         i++;
         j = i + 1;
     }
+    return (1);
 }
-void numctl(char *str)
+int numctl(char *str)
 {
     int j;
     j = 0;
@@ -49,14 +51,15 @@ void numctl(char *str)
             j++;
             a++; 
         }
-        while(!ft_isdigit(str[j]))
-            ft_error();
+        if(!ft_isdigit(str[j]))
+            return (0);
         if (a == 2)
-            ft_error();
+            return (0);
         j++;
     }
+    return (1);
 }
-void stoa (t_stack **change)
+int stoa (t_stack **change)
 {
     int array[ft_lstsize(*change)];
     int i;
@@ -69,8 +72,11 @@ void stoa (t_stack **change)
         strt = strt->next;
         i++;
     }
-    samectl(array,ft_lstsize(*change));
-    linectl(array,ft_lstsize(*change));
+    if (!samectl(array,ft_lstsize(*change)))
+        return (0);
+    if (!linectl(array,ft_lstsize(*change)))
+        return 1;
+    return (1);
 }
 
 int control(char *av, t_stack **a)
@@ -80,17 +86,22 @@ int control(char *av, t_stack **a)
     char **repo;
     repo = ft_split(av, ' ');
     if (!repo || !repo[0])
-    {
-        free(repo);
         return(0);
-    }
     while(repo[i])
     {
-        numctl(repo[i]);
-        intctl(ft_atoi(repo[i]));
+        if (!numctl(repo[i]))
+        {
+            clear_array(repo);
+            return (0);
+        }
+        if (!intctl(ft_atoi(repo[i])))
+        {
+            clear_array(repo);
+            return (0);
+        }
         ft_lstadd_back(a,ft_lstnew(ft_atoi(repo[i])));
         i++;
     }
-    free(repo);
-return (0);    
+    clear_array(repo);
+    return (1);
 }

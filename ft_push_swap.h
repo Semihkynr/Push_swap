@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/04 15:11:50 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/04 19:09:16 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ typedef struct s_list
 }					t_stack;
 
 int control(char *av, t_stack **a);
-void linectl(int *line, int size);
-void numctl(char *str);
+int linectl(int *line, int size);
+int numctl(char *str);
 void ft_error();
-void ft_errornw(char *av,t_stack **x);
-void stoa (t_stack **change);
-void samectl(int *iarr, int size);
-void intctl(long arr);
+int stoa (t_stack **change);
+int samectl(int *iarr, int size);
+int intctl(long arr);
+void clear_array(char **array);
+int sizeof_repo(char **repo);
 
 
 void twoctl (t_stack **a);
