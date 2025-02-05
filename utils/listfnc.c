@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/04 18:47:32 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:04:40 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ t_stack	*ft_lstnew(int content)
 }
 t_stack	*ft_lstlast(t_stack *lst)
 {
-	if (!lst)
+	t_stack *temp;
+
+	temp = lst;
+	if (!temp)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
@@ -62,7 +65,10 @@ void	ft_lstclear(t_stack **lst)
 	t_stack	*temp;
 
 	if (lst == NULL || *lst == NULL)
+	{
+		free(lst);
 		return ;
+	}
 	temp = *lst;
 	while (*lst)
 	{
@@ -70,5 +76,4 @@ void	ft_lstclear(t_stack **lst)
 		free(temp);
 		temp = *lst;
 	}
-	free(lst);
 }

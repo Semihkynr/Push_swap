@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/04 19:00:23 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:05:59 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 void clear_array(char **array)
 {
     int i;
-
     i = 0;
     while (array[i])
         free(array[i++]);
     free(array);
 }
 
-void ft_error()
+void ft_free(t_stack **g,t_stack **o)
 {
-    write(1, "Error\n", 6);
-    exit (1);
+    free(g);
+    free(o);
 }
 int linectl(int *line, int size)
 {
@@ -36,9 +35,8 @@ int linectl(int *line, int size)
         if (line[i] < line[i + 1])
             i++;
         else
-            return 0;  // Artan sırada değilse 0 döner
+            return 0;
     }
-
-    return 1;  // Artan sıradaysa 1 döner
+    return 1;
 }
 
