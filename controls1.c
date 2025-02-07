@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/05 19:05:59 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/07 15:48:45 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ void clear_array(char **array)
     free(array);
 }
 
-void ft_free(t_stack **g,t_stack **o)
-{
-    free(g);
-    free(o);
-}
 int linectl(int *line, int size)
 {
     int i;

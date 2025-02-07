@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/05 19:04:40 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:01:28 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,5 @@ void	ft_lstclear(t_stack **lst)
 		free(temp);
 		temp = *lst;
 	}
+	free(lst);
 }

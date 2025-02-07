@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:53 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/05 19:07:29 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:17:59 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ int fakemain(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
     {
         if (!control(av[i++],stack_a))
         {
-            ft_lstclear(stack_a);
-            ft_free(stack_a, stack_b);
             write (1, "Error\n", 6);
             return (0);
         }
     }
     if (!stoa(stack_a))
     {
-        ft_lstclear(stack_a);
-        ft_free(stack_a,stack_b);
         write (1, "Error\n", 6);
         return (0);
     }
@@ -60,12 +56,12 @@ int main(int ac ,char **av)
     stack_b = malloc(sizeof(t_stack *));
     if(ac < 2)
     {
-        ft_free(stack_a,stack_b);
+        free(stack_a);
+        free(stack_b);
         return (0);
     }
     fakemain(ac,av,stack_a,stack_b);
     ft_lstclear(stack_a);
     ft_lstclear(stack_b);
-    ft_free(stack_a,stack_b);
     return (0);   
 }

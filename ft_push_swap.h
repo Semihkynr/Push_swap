@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/05 19:06:16 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:25:24 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ int samectl(int *iarr, int size);
 int intctl(long arr);
 
 void clear_array(char **array);
-void ft_free(t_stack **g,t_stack **o);
-
 void twoctl (t_stack **a);
 void thrctl(t_stack **a);
 void fourctl (t_stack **h,t_stack **s);
 void acnumctl(int ac, t_stack **htc, t_stack **smh);
+void sortalg(t_stack **a, t_stack **b);
 
 t_stack	*ft_lstnew(int content);
 t_stack	*ft_lstlast(t_stack *lst);
