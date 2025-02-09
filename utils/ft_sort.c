@@ -6,15 +6,11 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:15:42 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/07 17:06:41 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/08 16:45:41 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_push_swap.h"
 
-void sortalg(t_stack **a, t_stack **b)
-{  
-    if()
-    {
-    }
-}
+    
+// ./push_swap 6 3 8 5 2 4 7 1 9

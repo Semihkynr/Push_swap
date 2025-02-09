@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/07 15:48:45 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/08 13:44:25 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,15 @@ int linectl(int *line, int size)
     }
     return 1;
 }
-
+void update_index(t_stack *stack)
+{
+    int index;
+    index = 0;
+    t_stack *current;
+    current = stack;
+    while (current)
+    {
+        current->index = index++;
+        current = current->next;
+    }
+}

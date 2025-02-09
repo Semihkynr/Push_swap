@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:03:04 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/07 16:24:56 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/08 17:08:39 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ void fourctl (t_stack **h,t_stack **s)
         sa(h);
     return ;
 }
+void fivectl(t_stack **a, t_stack **b)
+{
+    pb(a,b);
+    fourctl(a,b);
+    
+}
 
 void acnumctl(int ac, t_stack **htc, t_stack **smh)
 {
@@ -61,10 +67,8 @@ void acnumctl(int ac, t_stack **htc, t_stack **smh)
         thrctl(htc);
     if(ac == 4)
         fourctl(htc,smh);
-    if(ac > 4)
-    {
-        pb(htc,smh);
-        pb(htc,smh);
-        sortalg(htc,smh);
-    }
+    if(ac == 5)
+        fivectl(htc,smh);
+    if(ac > 5)
+        sortalg(htc,smh)
 }

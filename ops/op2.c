@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:07:01 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/05 18:14:06 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/08 13:51:17 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	pa(t_stack **node_a, t_stack **node_b)
 		add->next = *node_a;
 		*node_a = add;
 		write(1, "pa\n", 3);
+    	update_index(*node_a);
+		update_index(*node_b);
 	}
 	return ;
 }
@@ -38,6 +40,8 @@ void	pb(t_stack **node_a, t_stack **node_b)
 		add->next = *node_b;
 		*node_b = add;
 		write(1, "pb\n", 3);
+		update_index(*node_a);
+		update_index(*node_b);
 	}
 	return ;
 }
