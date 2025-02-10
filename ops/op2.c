@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:07:01 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/09 15:37:55 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/10 20:55:09 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void	pa(t_stack **node_a, t_stack **node_b)
 	return ;
 }
 
+
 void	pb(t_stack **node_a, t_stack **node_b)
 {
-	t_stack	*add;
+	t_stack		*add;
 
 	if (*node_a != NULL)
 	{

@@ -6,48 +6,48 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/09 15:59:32 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/10 20:09:56 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////
 #include <stdio.h>
 ////
-#include "libft/libft.h"
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include "libft/libft.h"
 
 typedef struct s_list
-{
-	int				content;
-	int				index;
+{   
+    int			    content;
+    int             index;
 	struct s_list	*next;
 }					t_stack;
 
-int					control(char *av, t_stack **a);
-int					linectl(int *line, int size);
-int					numctl(char *str);
-int					stoa(t_stack **change);
-int					samectl(int *iarr, int size);
-int					intctl(long arr);
+int control(char *av, t_stack **a);
+int linectl(int *line, int size);
+int stoa (t_stack **change);
 
-void				clear_array(char **array);
-void				twoctl(t_stack **a);
-void				thrctl(t_stack **a);
-void				fourctl(t_stack **h, t_stack **s);
-void				acnumctl(int ac, t_stack **htc, t_stack **smh);
-void				sortalg(t_stack **a, t_stack **b);
-int               distance(t_stack **a, t_stack **b);
+void clear_array(char **array);
+void sortalg(t_stack **a, t_stack **b);
+void acnumctl(int ac, t_stack **htc, t_stack **smh);
+
+int	min_index(t_stack **stack);
+int	max_bit(t_stack **stack);
+int	distance(t_stack **stack, int index);
+    
+void	fill_index_a(t_stack **stack_a);
 
 
-t_stack				*ft_lstnew(int content);
-t_stack				*ft_lstlast(t_stack *lst);
-void				ft_lstclear(t_stack **lst);
-void				ft_lstadd_back(t_stack **lst, t_stack *new);
-int					ft_lstsize(t_stack *lst);
-void				update_index(t_stack *stack);
+
+
+t_stack	*ft_lstnew(int content);
+t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstclear(t_stack **lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+int	ft_lstsize(t_stack *lst);
 //
-void				print_stack(t_stack *stack);
+void print_stack(t_stack *stack);
 //
 
 void				sa(t_stack **node_a);
