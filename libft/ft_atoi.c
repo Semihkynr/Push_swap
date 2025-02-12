@@ -6,14 +6,14 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:38:58 by skaynar           #+#    #+#             */
-/*   Updated: 2025/01/12 15:27:18 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 19:12:39 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	sign;
-	long	value;
+	int	value;
 	int	i;
 
 	sign = 1;

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:10:49 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/10 20:54:12 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 19:17:50 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static void	rrotate(t_stack **node)
 	}
 	return ;
 }
-
 
 void	rra(t_stack **node_a)
 {

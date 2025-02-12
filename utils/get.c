@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:48:16 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 13:32:15 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 19:17:15 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ void	fill_index_a(t_stack **stack_a)
 	fakestack = next_min(stack_a);
 	while (fakestack != NULL)
 	{
-		fakestack->index = index++;
+		fakestack->index = index;
 		fakestack = next_min(stack_a);
+		index++;
 	}
 }
+
 int	distance(t_stack **stack, int index)
 {
 	t_stack	*fakestack;
@@ -78,6 +80,7 @@ int	min_index(t_stack **stack)
 	}
 	return (min);
 }
+
 int	max_bit(t_stack **stack)
 {
 	t_stack	*fakestack;

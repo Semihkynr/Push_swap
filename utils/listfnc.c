@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:34:21 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/10 20:35:04 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 19:17:39 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ t_stack	*ft_lstnew(int content)
 	node->index = -1;
 	return (node);
 }
+
 t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = lst;
 	if (!temp)
@@ -35,6 +36,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 		temp = temp->next;
 	return (temp);
 }
+
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*end;
@@ -48,7 +50,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 }
 
-
 int	ft_lstsize(t_stack *lst)
 {
 	size_t	i;
@@ -61,6 +62,7 @@ int	ft_lstsize(t_stack *lst)
 	}
 	return (i);
 }
+
 void	ft_lstclear(t_stack **lst)
 {
 	t_stack	*temp;
