@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:15:42 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/10 20:52:25 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 13:16:33 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	sortalg(t_stack **a, t_stack **b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j++ < ft_lstsize(fake_a))
-		{
+		while (j++ < ft_lstsize(*a))
+		{	
 			fake_a = *a;
 			if ((fake_a->index >> i) & 1)
 				ra(a);

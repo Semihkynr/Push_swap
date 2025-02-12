@@ -1,6 +1,14 @@
 PRİNT KISA YOL TEST
-    ("%d\n",(*a)->content);
-    ("%d\n",(*a)->next->content);
-    ("%d\n",(*a)->next->next->content);
-    ("%d\n",(*a)->next->next->next->content);
-    ("%d\n",(*a)->next->next->next->next->content);
+void print_stack(t_stack *stack)
+{
+    t_stack *current = stack;
+
+    while (current != NULL)
+    {
+        printf("Content: %d, Index: %d", current->content, current->index);
+        if (current->next != NULL)
+            printf("\n");
+        current = current->next;
+    }
+    printf("\n");
+}

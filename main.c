@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:53 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/10 20:55:25 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/12 13:32:31 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ int main(int ac ,char **av)
         return (0);
     }
     fakemain(ac,av,stack_a,stack_b);
-    print_stack(*stack_a);
-    print_stack(*stack_b);
     ft_lstclear(stack_a);
     ft_lstclear(stack_b);
     return (0);   
