@@ -2,11 +2,11 @@
 NAME = push_swap
 
 SRCS =	ft_controls.c main.c controls1.c \
-		utils/listfnc.c \
 		ops/op0.c \
 		ops/op1.c \
 		ops/op2.c \
 		ops/op3.c \
+		utils/listfnc.c \
 		utils/minisort.c \
 		utils/ft_sort.c \
 		utils/get.c \

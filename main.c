@@ -6,26 +6,11 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:53 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 20:02:26 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 10:10:00 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_stack	*current;
-
-	current = stack;
-	while (current != NULL)
-	{
-		printf("Content: %d, Index: %d", current->content, current->index);
-		if (current->next != NULL)
-			printf("\n");
-		current = current->next;
-	}
-	printf("\n");
-}
 
 int	count_item(char *av)
 {
@@ -60,7 +45,7 @@ int	fakemain(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 	}
 	if (!stoa(stack_a))
 		return (0);
-	fill_index_a(stack_a);
+	find_index(stack_a);
 	acnumctl(count, stack_a, stack_b);
 	return (1);
 }

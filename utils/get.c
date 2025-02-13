@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:48:16 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 19:17:15 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 10:10:27 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 t_stack	*next_min(t_stack **stack)
 {
 	t_stack	*head;
-	t_stack	*min_node;
+	t_stack	*min;
 
 	head = *stack;
-	min_node = NULL;
+	min = NULL;
 	if (head == NULL)
 		return (NULL);
 	while (head != NULL)
 	{
 		if (head->index == -1)
 		{
-			if (!min_node || head->content < min_node->content)
-				min_node = head;
+			if (!min || head->content < min->content)
+				min = head;
 		}
 		head = head->next;
 	}
-	return (min_node);
+	return (min);
 }
 
-void	fill_index_a(t_stack **stack_a)
+void	find_index(t_stack **stack_a)
 {
 	t_stack	*fakestack;
 	int		index;

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 20:06:52 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 10:10:09 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -38,7 +37,7 @@ int					min_index(t_stack **stack);
 int					max_bit(t_stack **stack);
 int					distance(t_stack **stack, int index);
 
-void				fill_index_a(t_stack **stack_a);
+void				find_index(t_stack **stack_a);
 
 t_stack				*ft_lstnew(int content);
 t_stack				*ft_lstlast(t_stack *lst);
