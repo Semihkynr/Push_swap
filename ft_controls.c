@@ -6,16 +6,16 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 13:53:56 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 13:13:45 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	intctl(long arr)
+int	intctl(long arr,t_stack **a,t_stack **b,char **repo)
 {
 	if (arr > 2147483647 || arr < -2147483648)
-		return (0);
+		ft_error(a,b,repo);
 	return (1);
 }
 
@@ -89,7 +89,7 @@ int	stoa(t_stack **change)
 	return (1);
 }
 
-int	control(char *av, t_stack **a)
+int	control(char *av, t_stack **a ,t_stack **b)
 {
 	int		i;
 	char	**repo;
@@ -106,11 +106,7 @@ int	control(char *av, t_stack **a)
 			clear_array(repo);
 			return (0);
 		}
-		if (!intctl(my_atoi(repo[i])))
-		{
-			clear_array(repo);
-			return (0);
-		}
+		intctl(my_atoi(repo[i]),a,b,repo);
 		ft_lstadd_back(a, ft_lstnew(my_atoi(repo[i])));
 		i++;
 	}

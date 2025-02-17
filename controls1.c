@@ -6,13 +6,13 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 13:53:40 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 12:54:35 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	my_atoi(const char *str)
+long	my_atoi(const char *str)
 {
 	long	i;
 	long	sign;
@@ -30,14 +30,10 @@ int	my_atoi(const char *str)
 		i++;
 	}
 	while (ft_isdigit(str[i]))
-	{
 		result = result * 10 + (str[i++] - '0');
-		if (result > 2147483648)
-			return (0);
-	}
 	if ((result * sign) == 2147483648)			
 		return (0);
-	return ((int)result * sign);
+	return (result * sign);
 }
 
 void	clear_array(char **array)

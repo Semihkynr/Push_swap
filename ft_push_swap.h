@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:06:56 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 10:10:09 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 13:12:03 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_stack;
 
-int					control(char *av, t_stack **a);
+int					control(char *av, t_stack **a ,t_stack **b);
 int					linectl(int *line, int size);
 int					stoa(t_stack **change);
-int					my_atoi(const char *str);
+long				my_atoi(const char *str);
 
 void				clear_array(char **array);
 void				sortalg(t_stack **a, t_stack **b);
@@ -36,6 +36,8 @@ void				acnumctl(int ac, t_stack **htc, t_stack **smh);
 int					min_index(t_stack **stack);
 int					max_bit(t_stack **stack);
 int					distance(t_stack **stack, int index);
+
+void ft_error(t_stack **stack_a,t_stack **stack_b ,char **repo);
 
 void				find_index(t_stack **stack_a);
 

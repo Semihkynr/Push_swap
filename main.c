@@ -6,12 +6,20 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:53 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 12:17:55 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 13:47:19 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
+void ft_error(t_stack **stack_a,t_stack **stack_b ,char **repo)
+{
+	write(1,"Error\n",6);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
+	clear_array(repo);
+	exit(1);
+}
 int	count_item(char *av)
 {
 	int		i;
@@ -37,9 +45,9 @@ int	fakemain(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 	i = 1;
 	while (i < ac)
 	{
-		if (!control(av[i++], stack_a))
+		if (!control(av[i++], stack_a, stack_b))
 		{
-			write(1, "Error3\n", 6);
+			write(1, "Error\n", 6);
 			return (0);
 		}
 	}
