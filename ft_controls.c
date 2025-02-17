@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:39:06 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 20:07:06 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 13:53:56 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,14 @@ int	control(char *av, t_stack **a)
 	if (!repo || !repo[0])
 		return (free(repo), 0);
 	while (repo[i])
-	{
+	{	
+		
 		if (!numctl(repo[i]))
 		{
 			clear_array(repo);
 			return (0);
 		}
-		if (!my_atoi(repo[i]))
+		if (!intctl(my_atoi(repo[i])))
 		{
 			clear_array(repo);
 			return (0);

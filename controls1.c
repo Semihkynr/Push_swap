@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 20:06:58 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 13:53:40 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	my_atoi(const char *str)
 		if (result > 2147483648)
 			return (0);
 	}
-	if ((result * sign) == 2147483648)
+	if ((result * sign) == 2147483648)			
 		return (0);
 	return ((int)result * sign);
 }

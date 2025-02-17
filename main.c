@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:53 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 10:10:00 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/13 12:17:55 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	fakemain(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 	{
 		if (!control(av[i++], stack_a))
 		{
-			write(1, "Error\n", 6);
+			write(1, "Error3\n", 6);
 			return (0);
 		}
 	}
