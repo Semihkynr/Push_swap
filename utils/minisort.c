@@ -6,19 +6,19 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:03:04 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 19:16:46 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/20 12:53:06 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_push_swap.h"
 
-void	twoctl(t_stack **a)
+static void	twoctl(t_stack **a)
 {
 	if ((*a)->content > (*a)->next->content)
 		sa(a);
 }
 
-void	thrctl(t_stack **a)
+static void	thrctl(t_stack **a)
 {
 	if ((*a)->content > (*a)->next->content
 		&& (*a)->content > (*a)->next->next->content)
@@ -38,7 +38,7 @@ void	thrctl(t_stack **a)
 	}
 }
 
-void	fourctl(t_stack **h, t_stack **s)
+static void	fourctl(t_stack **h, t_stack **s)
 {
 	pb(h, s);
 	thrctl(h);
@@ -58,7 +58,7 @@ void	fourctl(t_stack **h, t_stack **s)
 	return ;
 }
 
-void	fivectl(t_stack **a, t_stack **b)
+static void	fivectl(t_stack **a, t_stack **b)
 {
 	int	d;
 

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:38:39 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 19:15:59 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/20 12:57:35 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,4 @@ void	sb(t_stack **node_b)
 {
 	swap(node_b);
 	write(1, "sb\n", 3);
-}
-
-void	ss(t_stack **node_a, t_stack **node_b)
-{
-	swap(node_a);
-	swap(node_b);
 }

@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:59:14 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/12 19:17:47 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/20 12:57:31 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,4 @@ void	rb(t_stack **node_b)
 {
 	rotate(node_b);
 	write(1, "rb\n", 3);
-}
-
-void	rr(t_stack **node_a, t_stack **node_b)
-{
-	rotate(node_a);
-	rotate(node_b);
-	write(1, "rr\n", 3);
 }

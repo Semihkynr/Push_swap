@@ -6,7 +6,7 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 19:27:46 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/17 12:54:35 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 14:44:28 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	my_atoi(const char *str)
 	}
 	while (ft_isdigit(str[i]))
 		result = result * 10 + (str[i++] - '0');
-	if ((result * sign) == 2147483648)			
+	if ((result * sign) == 2147483648)
 		return (0);
 	return (result * sign);
 }

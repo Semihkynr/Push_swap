@@ -6,13 +6,13 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:48:16 by skaynar           #+#    #+#             */
-/*   Updated: 2025/02/13 10:10:27 by skaynar          ###   ########.fr       */
+/*   Updated: 2025/02/17 14:43:29 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_push_swap.h"
 
-t_stack	*next_min(t_stack **stack)
+static t_stack	*next_min(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*min;
